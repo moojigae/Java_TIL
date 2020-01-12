@@ -1,11 +1,10 @@
-package com.kh.example.person.run;
+package com.kh.example.animal.run;
 
-import com.kh.example.person.controller.PersonController;
+import com.kh.example.animal.controller.AnimalController;
 
 public class Run {
 	public static void main(String[] args) {
-		PersonController pc = new PersonController();
-		pc.method1();
-		pc.method2();
+		AnimalController ac = new AnimalController();
+		ac.method();
 	}
 }
