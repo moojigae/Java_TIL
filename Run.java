@@ -1,28 +1,13 @@
-package com.kh.example.chap01_encapsulation;
+package com.kh.example.chap02_class.defaultClass.run;
+
+//import com.kh.example.chap02_class.defaultClass.controller.DefaultClassTest;
+//The type com.kh.example.chap02_class.defaultClass.controller.DefaultClassTest is not visible
 
 public class Run {
 	public static void main(String[] args) {
-		Account a = new Account(); // 인스턴스화
-		
-//		현재 잔액 조회
-		a.displayBalance(); // 박신우님의 계좌에 잔액은 0원입니다.
-		
-		a.deposit(1000000); // 박신우님의 계좌에 1000000원이 입금되었습니다.
-		a.displayBalance(); // 박신우님의 계좌에 잔액은 1000000원입니다.
-		
-		a.deposit(1500000);	// 박신우님의 계좌에 1500000원이 입금되었습니다.
-		a.displayBalance(); // 박신우님의 계좌에 잔액은 2500000원입니다.
-		
-		a.withdraw(500000); // 박신우님의 계좌에서 500000원이 출금되었습니다.
-		a.displayBalance(); // 박신우님의 계좌에 잔액은 2000000원입니다.
-		// 함수(메소드)로 접근
-		
-//		a.balance -= 2000000;
-		// 변수로 접근
-//		The field Account.balance is not visible
-//		private은 나 자신(Account)에서만 볼 수 있게 제한해주기 때문에 
-//		외부에서 보이지 않아 에러 뜸
-		a.withdraw(500000); // 박신우님의 계좌에서 500000원이 출금되었습니다.
-		a.displayBalance(); // 박신우님의 계좌에 잔액은 1500000원입니다.
+//		DefaultClassTest dct = new DefaultClassTest();
+//		default 클래스는 다른(외부) 패키지에서 접근이 불가능하기 때문에 없는 클래스라는 에러 발생
+//		하지만 같은 클래스 내에서는 사용 가능
+//		dct.test();
 	}
 }
