@@ -1,10 +1,9 @@
-package com.kh.example.animal.run;
+package com.kh.example.test.run;
 
-import com.kh.example.animal.controller.AnimalController;
+import com.kh.example.test.controller.InheritanceController;
 
 public class Run {
 	public static void main(String[] args) {
-		AnimalController ac = new AnimalController();
-		ac.method();
+		new InheritanceController().method();
 	}
 }
