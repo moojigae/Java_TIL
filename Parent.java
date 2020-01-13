@@ -1,15 +1,41 @@
-package com.kh.example.test.model.vo;
+package com.kh.example.chap01_poly.test.model.vo;
 
 public class Parent {
-	private int num;
-	double dNum;
-	protected boolean bool;
-	public char ch; 
+//	 - x : int
+//	 - y : int
 	
-	public void setNum(int num) {
-		this.num = num;
+//	+Parent()
+//	+Parent(x:int, y:int)
+	
+//	+getter/setter
+	
+	private int x;
+	private int y;
+	
+	public Parent() {}
+	public Parent(int x, int y) {
+		this.x = x;
+		this.y = y;
 	}
-	public int getNum() {
-		return num;
+	
+	public void setX(int x) {
+		this.x = x;
+	}
+	public int getX() {
+		return x;
+	}
+	public void setY(int y) {
+		this.y = y;
+	}
+	public int getY() {
+		return y;
+	}
+	
+	public void printParent() {
+		System.out.println("唱 何葛具");
+	}
+	
+	public void print() {
+		System.out.println("唱 何葛具!!!!!!!!");
 	}
 }

@@ -1,28 +1,28 @@
-package com.kh.example.test.model.vo;
+package com.kh.example.chap01_poly.test.model.vo;
 
-public class Child1 {
-	private String str;
-	private int num;
+public class Child1 extends Parent { //Parent 상속받음
+	private int z;
 	
-	public Child1() { 		// 같은 패키지, Parent의 자식이 아님
-		Parent p = new Parent();
-		p.dNum = 0.0;		//default라서 접근 가능
-		p.bool = false;		// 같은 패키지라 접근 됨
-		p.ch = 'A';			// public 접근 가능		
-//		p.num = 10;
-//		The field Parent.num is not visible  -> private이라서 밖에서 안보임
+	public Child1() {}
+	public Child1(int x, int y, int z) {
+		super(x, y);
+		this.z = z;
 	}
 	
-	public void setStr(String str) {
-		this.str = str;
+	public int getZ() {
+		return z;
 	}
-	public String getStr() {
-		return str;
+	public void setZ(int z) {
+		this.z = z;
 	}
-	public void setNum(int num) {
-		this.num = num;
+	
+	public void printChild1() {
+		System.out.println("나 첫 번째 자식이야");
 	}
-	public int getNum() {
-		return num;
-	}
+	
+	@Override
+	public void print() {
+		// TODO Auto-generated method stub
+		System.out.println("난 첫 번째 자식이야!!!!!!!!");
+	} 
 }
