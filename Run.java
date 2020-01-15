@@ -1,9 +1,10 @@
-package com.kh.example.chap01_poly.test.run;
+package com.kh.example.chap02_tryCatch.run;
 
-import com.kh.example.chap01_poly.test.controller.PolyController;
+import com.kh.example.chap02_tryCatch.controller.TryCatchController;
+
 public class Run {
 	public static void main(String[] args) {
-	PolyController pc = new PolyController();
-	pc.method();
-}
+		TryCatchController tcc = new TryCatchController();
+		tcc.method1();
+	}
 }
