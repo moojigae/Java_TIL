@@ -17,6 +17,7 @@ package kh.model.vo;
 import java.io.BufferedReader;
 import java.io.EOFException;
 import java.io.FileInputStream;
+import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
@@ -25,6 +26,7 @@ import java.io.ObjectOutputStream;
 import java.io.OutputStream;
 import java.io.Serializable;
 import java.net.Socket;
+import java.util.ArrayList;
 
 public class Book implements Serializable {
 
@@ -96,6 +98,45 @@ public class Book implements Serializable {
 				e.printStackTrace();
 			}
 		} catch (IOException e) {
+			e.printStackTrace();
+		}
+	}
+	
+	public void fileSave() {
+		ArrayList<Book> bookList = new ArrayList<Book>();
+		bookList.add(new Book("자바를 잡아라",30000));
+		bookList.add(new Book("자바를 잡",25000));
+		bookList.add(new Book("자바를 잡아",35000));
+		bookList.add(new Book("자바를",20000));
+		for(Book b : bookList) {
+			System.out.println(b);
+		}
+		try (ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream("books.dat"));){
+			
+			for(Book b : bookList) {
+				oos.writeObject(b);
+			}
+			
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+	}
+	public void fileOpen() {
+		try (ObjectInputStream oos = new ObjectInputStream(new FileInputStream("books.dat"));){
+			ArrayList<Book> bookList = new ArrayList<Book>();
+			while(true) {
+				try {
+					Book b = (Book)oos.readObject();
+					bookList.add(b);
+				} catch (EOFException e) {
+					for(Book b : bookList) {
+						System.out.println(b);
+					}
+				}
+			}
+		} catch (IOException e) {
+			e.printStackTrace();
+		} catch (ClassNotFoundException e) {
 			e.printStackTrace();
 		}
 	}
